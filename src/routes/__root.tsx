@@ -7,10 +7,8 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { ConversationProvider } from "@elevenlabs/react";
 
 import appCss from "../styles.css?url";
-
 
 function NotFoundComponent() {
   return (
@@ -75,13 +73,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { name: "description", content: "Live Joke Buddy is an AI-powered application that brings animated avatars to life, delivering spoken jokes and engaging in playful trolling." },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:description", content: "Live Joke Buddy is an AI-powered application that brings animated avatars to life, delivering spoken jokes and engaging in playful trolling." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:description", content: "Live Joke Buddy is an AI-powered application that brings animated avatars to life, delivering spoken jokes and engaging in playful trolling." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/823829f9-d2d2-49be-937f-b2c022a2be29/id-preview-e9e5aa84--01690075-8936-44ce-a71c-c65057e69de4.lovable.app-1779180156061.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/823829f9-d2d2-49be-937f-b2c022a2be29/id-preview-e9e5aa84--01690075-8936-44ce-a71c-c65057e69de4.lovable.app-1779180156061.png" },
     ],
     links: [
       {
@@ -115,10 +117,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ConversationProvider>
-        <Outlet />
-      </ConversationProvider>
+      <Outlet />
     </QueryClientProvider>
   );
 }
-
