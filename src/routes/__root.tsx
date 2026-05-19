@@ -7,8 +7,10 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { ConversationProvider } from "@elevenlabs/react";
 
 import appCss from "../styles.css?url";
+
 
 function NotFoundComponent() {
   return (
@@ -113,7 +115,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <ConversationProvider>
+        <Outlet />
+      </ConversationProvider>
     </QueryClientProvider>
   );
 }
+
