@@ -14,13 +14,46 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bonus_points: number
+          created_at: string
+          district: string
+          full_name: string
+          id: string
+          nickname: string
+          place: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bonus_points?: number
+          created_at?: string
+          district: string
+          full_name: string
+          id: string
+          nickname: string
+          place: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bonus_points?: number
+          created_at?: string
+          district?: string
+          full_name?: string
+          id?: string
+          nickname?: string
+          place?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      award_bonus: { Args: { _delta: number }; Returns: number }
+      get_email_by_nickname: { Args: { _nickname: string }; Returns: string }
     }
     Enums: {
       [_ in never]: never
